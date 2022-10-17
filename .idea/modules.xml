@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/WebStormProjects.iml" filepath="$PROJECT_DIR$/.idea/WebStormProjects.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/ReactUsing.iml" filepath="$PROJECT_DIR$/.idea/ReactUsing.iml" />
+>>>>>>> origin/master
     </modules>
   </component>
 </project>
