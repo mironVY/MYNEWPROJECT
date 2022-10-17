@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-//import { logout } from '../../actions/auth'
+import { logout } from '../../actions/auth'
 
 class Header extends React.Component {
 
@@ -86,10 +86,10 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    //logout: PropTypes.func.isRequired,
-    //auth: PropTypes.object.isRequired
+    logout: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({ auth: state.auth })
 
-export default connect(mapStateToProps, {  })(Header)
+export default connect(mapStateToProps, { logout })(Header)
