@@ -10,6 +10,7 @@ export const Home = () => {
     const [searchValue, setSearchValue] = React.useState('');
     const [collections, setCollections] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
+    const [page, setPage] = React.useState(0);
 
     const categories = [
         { "name": "Все" },

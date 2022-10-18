@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export const Collection = ({ images, name}) => {
     return(
         <div className="collection">
@@ -11,5 +12,6 @@ export const Collection = ({ images, name}) => {
             </div>
             <h4>{name}</h4>
         </div>
-    )
-}
+    );
+};
+
