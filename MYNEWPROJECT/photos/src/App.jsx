@@ -8,7 +8,10 @@ import {Registration} from "./pages/Register";
 import {AddPost} from "./pages/AddPost";
 
 function App() {
-
+/*React Router это стандартная библиотека маршрутизации (routing) в React.
+Он хранит интерфейс приложения синхронизированным с URL на браузере.
+React Router позволяет вам маршрутизировать "поток данных" (data flow) в вашем приложении понятным способом.
+Он подобен утверждению, если у вас есть данный URL, он будет подобен этому Route (маршруту), и интерфейс будет таким!*/
   return (
       <>
           <Header />
