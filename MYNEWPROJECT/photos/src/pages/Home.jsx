@@ -9,6 +9,7 @@ export const Home = () => {
     const [categoryId, setCategoryId] = React.useState(0);
     const [searchValue, setSearchValue] = React.useState('');
     const [collections, setCollections] = React.useState([]);
+    const [isLoading, setIsLoading] = React.useState(true);
 
     const categories = [
         { "name": "Все" },
@@ -18,6 +19,7 @@ export const Home = () => {
         { "name": "Города" }
     ];
     React.useEffect(() =>{
+        setIsLoading(true);
         fetch(`https://634de928b8ce95a1dd7b848f.mockapi.io/collection?${categoryId ? `category=${categoryId}` :''}`)
             .then((res) => res.json())
             .then((json) => {
@@ -25,7 +27,7 @@ export const Home = () => {
             }).catch((err) =>{
             console.warn(err);
             alert(('Errorrrrrr!'))
-        })
+            }).finally(() => setIsLoading(false))
     }, [categoryId])
     return (
         <div className="App">
@@ -41,7 +43,8 @@ export const Home = () => {
                 />
             </div>
             <div className="content">
-                {collections
+                {isLoading ? <h2>Page is loading...</h2>
+                    : collections
                     .filter(obj =>{
                         return obj.name.toLowerCase().includes(searchValue.toLowerCase())
                     })
