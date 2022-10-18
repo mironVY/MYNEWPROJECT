@@ -12,7 +12,6 @@ export const Home = () => {
     const [isLoading, setIsLoading] = React.useState(true);
     const [page, setPage] = React.useState(0);
 
-
     const categories = [
         { "name": "Все" },
         { "name": "Море" },
