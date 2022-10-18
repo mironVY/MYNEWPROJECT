@@ -35,7 +35,7 @@ export const Home = () => {
             <div className="top">
                 <ul className="tags">
                     {categories.map((obj,i) => (<li onClick={() => setCategoryId(i)}
-                                                    className={categoryId == i ? 'active' : ''} key={obj.name}>{obj.name}</li>))}
+                                                    className={categoryId === i ? 'active' : ''} key={obj.name}>{obj.name}</li>))}
                 </ul>
                 <input
                     value={searchValue} onChange={(e) => setSearchValue(e.target.value)}
