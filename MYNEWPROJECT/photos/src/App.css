@@ -17,9 +17,11 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;/*устанавливает направление главной и
+  поперечной оси или, говоря другими словами, расставляет элементы в ряд или в колонку*/
   align-items: center;
-  justify-content: center;
+  justify-content: center;/*определяет, как браузер распределяет пространство между и вокруг
+  элементов контента вдоль главной оси flex контейнера*/
   font-size: calc(10px + 2vmin);
   color: white;
 }
