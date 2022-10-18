@@ -10,7 +10,7 @@ export const Home = () => {
     const [searchValue, setSearchValue] = React.useState('');
     const [collections, setCollections] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(true);
-    const [page, setPage] = React.useState(0);
+    const [page, setPage] = React.useState(1);
 
 
     const categories = [
@@ -22,7 +22,11 @@ export const Home = () => {
     ];
     React.useEffect(() =>{
         setIsLoading(true);
-        fetch(`https://634de928b8ce95a1dd7b848f.mockapi.io/collection?${categoryId ? `category=${categoryId}` :''}`)
+
+        const category = categoryId ? `category=${categoryId}` :'';
+
+
+        fetch(`https://634de928b8ce95a1dd7b848f.mockapi.io/collection?page=${page}&limit=3&${category}`)
             .then((res) => res.json())
             .then((json) => {
                 setCollections(json);
@@ -30,7 +34,7 @@ export const Home = () => {
             console.warn(err);
             alert(('Errorrrrrr!'))
             }).finally(() => setIsLoading(false))
-    }, [categoryId])
+    }, [categoryId, page])
     return (
         <div className="App">
             <h1>Моя коллекция фотографий</h1>
@@ -59,9 +63,11 @@ export const Home = () => {
                     ))}
             </div>
             <ul className="pagination">
-                <li>1</li>
-                <li className="active">2</li>
-                <li>3</li>
+                {
+                  [...Array(5)].map((_, i) => (
+                      <li onClick={() => setPage(i+ 1)} className={page === i + 1 ? 'active' : ''}>{i + 1}</li>
+                  ))
+                }
             </ul>
         </div>
     );
